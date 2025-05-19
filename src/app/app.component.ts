@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [RouterOutlet,RouterModule],
+  template: `
+  <h1>Locadora de Veiculos</h1>
+  <div style="display:flex; margin-bottom:25px">
+  <nav>
+    <a routerLink="/cliente">Clientes</a> |
+    <a routerLink="/veiculo">Veiculos</a> |
+    <a routerLink="/aluguel">Alugueis</a>
+  </nav>
+  </div>
+  <router-outlet></router-outlet>
+`,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
