@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Veiculo } from '../models/veiculo';
 import { environment } from '../environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +32,14 @@ export class VeiculoService {
 
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.url}/${id}`);
+  }
+
+  findDisponiveis(): Observable<Veiculo[]> {
+    return this.http.get<Veiculo[]>(`${this.url}/ativos`);
+  }
+
+  devolverVeiculo(id: number): Observable<void> {
+    return this.http.post<void>(`${this.url}/${id}/retornar`,null);
   }
 
 }

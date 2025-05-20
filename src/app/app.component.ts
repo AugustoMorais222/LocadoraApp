@@ -10,7 +10,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   <nav>
     <a routerLink="/cliente">Clientes</a> |
     <a routerLink="/veiculo">Veiculos</a> |
-    <a routerLink="/aluguel">Alugueis</a>
+    <a routerLink="/alugueis">Alugueis</a>|
+    <a routerLink="/aluguel">Cadastrar aluguel</a>|
   </nav>
   </div>
   <router-outlet></router-outlet>
